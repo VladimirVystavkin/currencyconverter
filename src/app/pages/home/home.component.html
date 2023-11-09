@@ -1,0 +1,39 @@
+<div class="container d-flex align-items-center justify-content-center ">
+<div>
+<div  class="row mx-2 my-2">
+    <div class="col">
+        <div class="input-group ">
+            <span class="input-group-text" id="addon-wrapping">{{ form.get('firstSelectedCurrency')?.value.toSting === "[object Object]" ? '@' : form.get('firstSelectedCurrency')?.value['cc'] }}</span>
+            <input  type="text" class="form-control" placeholder="Put value 00.00" aria-label="Username" aria-describedby="addon-wrapping" (keyup)="convertCurrencyFirstInput($event)" [(ngModel)]="firstCurrencyInput" >
+          </div>
+    </div>
+    <div class="col">
+        <div class="input-group ">
+            <span class="input-group-text" id="addon-wrapping">{{ form.get('secondSelectedCurrency')?.value.toSting === "[object Object]" ? '@' : form.get('secondSelectedCurrency')?.value['cc'] }}</span>
+            <input  type="number" class="form-control" placeholder="Put value 00.00" aria-label="Username" aria-describedby="addon-wrapping" (keyup)="convertCurrencySecondInput($event)" [(ngModel)]="secondCurrencyInput">
+           
+          </div>
+    </div>
+</div>
+
+
+    <form [formGroup]="form" class="row mx-2 my-2">
+        <div class="col">
+            <select  class="form-select" aria-label="Default select example" formControlName="firstSelectedCurrency" >
+             
+                <option *ngFor="let currency of currencies " [ngValue]="currency">{{currency['txt']}}</option> 
+              </select>
+
+        </div>
+        <div class="col">
+            <select  class="form-select" aria-label="Default select example" formControlName="secondSelectedCurrency">
+             
+                <option *ngFor="let currency of currencies " [ngValue]="currency">{{currency['txt']}}</option> 
+              </select>
+        </div>
+        
+    </form>
+
+</div>    
+
+</div>

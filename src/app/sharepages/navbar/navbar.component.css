@@ -1,0 +1,10 @@
+.navbar{
+    background-color: var(--primary-color) !important;
+}
+i{
+    padding: 0 10px;
+}
+
+strong{
+    color: var(--secondary-color);
+}
